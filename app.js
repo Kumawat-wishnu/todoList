@@ -69,7 +69,7 @@ app.get("/",function(req,res){
  
  
 });
-// 
+
 app.get("/:customListName",function(req,res)
 {
         const customListName=req.params.customListName;
@@ -132,21 +132,6 @@ app.post("/delete",function(req,res)
    })
 })
 
-app.get("/work",function(req,res)
-{
-  res.render("list",{listTitle:"work_list",newListItems:workItems});
-})
-
-app.get("/about",function(req,res)
-{
-        res.render("about");
-})
-app.post("/work",function(req,res)
-{  let item=req.body.newItem;
-        workItems.push(item);
-        res.redirect("/work");
-
-})
 const PORT=process.env.PORT;
 app.listen(PORT,function(){
     console.log("server started on 3000");
